@@ -4,6 +4,6 @@
 ### NetBeans ###
 # nbproject/private/
 # build/
-dist/*
+dist/**
 !dist/index.html
 node_modules/
