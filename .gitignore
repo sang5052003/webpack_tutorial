@@ -1,0 +1,8 @@
+### IntelliJ IDEA ###
+# .idea
+
+### NetBeans ###
+# nbproject/private/
+# build/
+dist/
+!dist/index.html
