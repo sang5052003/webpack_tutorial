@@ -22,14 +22,14 @@ module.exports = {
     devServer: {
         //webpack-dev-server to serve the files from the dist directory on localhost:8080
         contentBase: './dist',
-        hot: true
+        hot: true //hmr을 사용
     },
     plugins: [
         new HtmlWebpackPlugin({
             title: 'Output Management'
         }),
-        new webpack.NamedModulesPlugin(),
-        new webpack.HotModuleReplacementPlugin()
+        new webpack.NamedModulesPlugin(),         //to see which dependencies are being patched(on cmd)
+        new webpack.HotModuleReplacementPlugin()  //hmr plugin
     ],
     output: {
         filename: '[name].bundle.js',

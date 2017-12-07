@@ -18,3 +18,11 @@ function component() {
 }
 
 document.body.appendChild(component())
+
+//when a change inside print.js is detected we tell webpack to accept the updated module.
+if(module.hot) {
+    module.hot.accept('./print.js', function() {
+        consoel.log('Accepting the updated printMe module')
+        printMe()
+    })
+}
