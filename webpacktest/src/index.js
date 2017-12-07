@@ -2,6 +2,10 @@ import _ from 'lodash'
 import printMe from './print.js'
 import './styles.css'
 
+if(process.env.NODE_ENV !== 'production') {
+    console.log('dev mode')
+}
+
 function component() {
     var element = document.createElement('div')
     
