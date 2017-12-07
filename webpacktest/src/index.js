@@ -17,12 +17,20 @@ function component() {
     return element
 }
 
-document.body.appendChild(component())
+//document.body.appendChild(component())
+let element = component() // Store the element to re-render on print.js changes
+document.body.appendChild(element)
 
 //when a change inside print.js is detected we tell webpack to accept the updated module.
 if(module.hot) {
     module.hot.accept('./print.js', function() {
         consoel.log('Accepting the updated printMe module')
-        printMe()
+
+        // button's onclick event handler is still bound to the original printMe function.
+        // need to update that binding to the new printMe function using module.hot.accept
+//        printMe()
+        document.body.removeChild(element)
+        element = component() // Re-render the "component" to update the click handler
+        document.body.appendChild(element)
     })
 }
